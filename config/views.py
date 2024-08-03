@@ -87,7 +87,7 @@ class AddReview(View):
             form = form.save(commit=False)
             form.advert = advert
             form.save()
-        return redirect('/')
+        return redirect(self.request.META['HTTP_REFERER'])
 
 
 @login_required
